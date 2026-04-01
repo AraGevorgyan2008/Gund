@@ -1,16 +1,17 @@
-# This is a sample Python script.
+import csv
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+class Person:
+    def __init__(self, name, age, pasport, race, place, gender, number,sitting_place):
+        self.name = name
+        self.age = age
+        self.pasport = pasport
+        self.race = race
+        self.place = place
+        self.gender = gender
+        self.number = number
+        self.sitting_place = sitting_place
 
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    def add(self):
+        with open('data.csv', "a") as csvfile:
+            w = csv.writer(csvfile)
+            w.writerow([self.race, self.place, self.gender, self.number, self.sitting_place])
