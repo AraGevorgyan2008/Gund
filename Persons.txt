@@ -1,0 +1,8 @@
+Name Mane
+ Age 17
+ Passport a
+ Race aarth
+ Place rthar
+ Gender art
+ Number tha
+ Sitting Place 9874
