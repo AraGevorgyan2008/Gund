@@ -20,12 +20,7 @@ class Person:
     def __str__(self):
         return f"Name {self.name}\n Age {self.age}\n Passport {self.passport}\n Race {self.race}\n Place {self.place}\n Gender {self.gender}\n Number {self.number}\n Sitting Place {self.sitting_place}"
 
-    def change(self):
-        with open('data1.csv', "r") as f:
-            data = f.readlines()
-            for i in data:
 
 
 a = Person(1,"fdf",25,"12599755","A3333","ddefdew","dfwe",947568555,"5A")
 a.add()
-a.change()
