@@ -45,8 +45,8 @@ class Person:
     def __str__(self):
         return f"Name {self.name}\n Age {self.age}\n Passport {self.passport}\n Race {self.race}\n Place {self.place}\n Gender {self.gender}\n Number {self.number}\n Sitting Place {self.sitting_place}"
 
-def tpel(filename):
-    with open(filename, "r") as f:
+def tpel():
+    with open("data1.csv", "r") as f:
         r=csv.reader(f)
         for row in r:
             print(f"Name: {row[1]}")
@@ -57,6 +57,7 @@ def tpel(filename):
             print(f"Gender: {row[6]}")
             print(f"Number: {row[7]}")
             print(f"Sitting Place: {row[8]}")
+
 def findAv(Id):
     with open('aviacompany.csv', "r") as file1:
         r = file1.readlines()
@@ -81,7 +82,4 @@ def delete(person_id):
         writer.writeheader()
         writer.writerows(filtered_rows)
 
-user_id = input("Enter ID: ")
-delete(user_id)
-a = Person(1,"fdf",25,"12599755","A3333",1,"dfwe",947568555,"5A")
 print(findAv(1))
