@@ -1,5 +1,4 @@
 import csv
-
 class Aviacompany:
     def __init__(self, ID, name, number):
         self.ID = ID
@@ -66,7 +65,23 @@ def findAv(Id):
                 if int(i[0]) == Id:
                     return  i
 
+def delete(person_id):
+    filtered_rows = []
 
+    with open("data1.csv", "r", newline='', encoding='utf-8') as file:
+        reader = csv.DictReader(file)
+        field_names = reader.fieldnames
 
+        for row in reader:
+            if row["ID"] != str(person_id):
+                filtered_rows.append(row)
+
+    with open("data1.csv", "w", newline='', encoding='utf-8') as file:
+        writer = csv.DictWriter(file, fieldnames=field_names)
+        writer.writeheader()
+        writer.writerows(filtered_rows)
+
+user_id = input("Enter ID: ")
+delete(user_id)
 a = Person(1,"fdf",25,"12599755","A3333",1,"dfwe",947568555,"5A")
 print(findAv(1))
